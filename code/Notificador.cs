@@ -6,15 +6,18 @@ public class Notificador : MonoBehaviour {
   
   public delegate void mensaje();
   public event mensaje OnMiEvento;
-  public int contador;
+  public int counter;  
+  private GameObject text;
 
   void Start(){
-    this.contador = 0;
+    this.text = GameObject.Find("Counter");
+    this.counter = 0;
   }
 
   void Update(){
-    this.contador ++;
-    if (this.contador % 1000 == 0) {
+    this.text.GetComponent<TextMesh>().text = "Counter: " + this.counter.ToString();
+    this.counter ++;
+    if (this.counter % 100 == 0) {
       OnMiEvento();
     }
   }
