@@ -9,7 +9,7 @@ public class ObjectBBehaviour : MonoBehaviour {
   //private GameObject[] objectsA;
   private GameObject objectC;
 
-  private Notificador notificador;
+  private PlayerController notificador;
 
   private float rotationSpeed = 1.0f;
 
@@ -43,7 +43,7 @@ public class ObjectBBehaviour : MonoBehaviour {
     // *******************************         *******************************
 
     Debug.DrawRay(this.transform.position, newDirection, Color.red, 1, false);
-    objectTransform.localRotation = Quaternion.LookRotation(newDirection); 
+    this.transform.localRotation = Quaternion.LookRotation(newDirection); 
   }
 
   void Update(){

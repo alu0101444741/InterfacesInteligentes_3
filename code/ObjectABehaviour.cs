@@ -12,7 +12,7 @@ public class ObjectABehaviour : MonoBehaviour {
   private GameObject[] objectsB;
   private GameObject objectC; 
 
-  private Notificador notificador;
+  private PlayerController notificador;
 
   void Start(){
     this.renderer = this.GetComponent<Renderer>();
