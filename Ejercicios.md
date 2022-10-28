@@ -2,9 +2,9 @@
 
 2. Crear una escena en Unity, con objetos de tipo A, B y un único objeto C con los siguientes comportamientos:
 
-    * Cuando el jugador colisiona con un objeto de tipo B, los objetos A se acercan al objeto C.
-
     * Cuando el jugador toca algún objeto A se incrementa el tamaño de cualquier objeto B.
+    
+    * Cuando el jugador colisiona con un objeto de tipo B, los objetos A se acercan al objeto C.    
 
     * Cuando el jugador se aproxima al objeto de tipo C:
         - Los objetos de tipo A cambian su color y saltan.

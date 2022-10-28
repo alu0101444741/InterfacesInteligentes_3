@@ -2,22 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Objetos tipo C --> ESFERA
 public class ObjectCBehaviour : MonoBehaviour {
-  private GameObject player;
+  /*private GameObject player;
   private GameObject[] objectsA;
   private GameObject[] objectsB;
   private GameObject objectsBTarget;
   private int proximity_sensitivity = 1;
   private float rotationSpeed = 1.0f;
+
+  private Notificador notificador;*/
+
+  void Start(){
+    
+  }
+
+  void Update(){
+
+  }
+/*
   void Start(){
     this.player = GameObject.Find("Cube_Player");
     this.objectsA = GameObject.FindGameObjectsWithTag("TypeA");
     this.objectsB = GameObject.FindGameObjectsWithTag("TypeB");
     this.objectsBTarget = GameObject.Find("Target");
   }
-
-  void Update(){
-    // If player gets closer enough
+*/
+  /*void Update(){
+    
     if(checkPlayerIsNear()) {
       for (int i = 0; i < this.objectsA.Length; ++i) {
         if (this.objectsA[i].GetComponent<ObjectABehaviour>().isGrounded) {
@@ -37,7 +49,7 @@ public class ObjectCBehaviour : MonoBehaviour {
         Vector3 newDirection = Vector3.RotateTowards(objectTransform.forward, targetDirection, singleStep, 0.0f);
 
         Debug.DrawRay(objectTransform.position, newDirection, Color.red, 1, false);
-        
+     */  
         // *******************************  Debug  *******************************
         /*string objectPosition = this.objectsB[i].name +
                                 "(X:" + objectTransform.localPosition.x.ToString() +
@@ -48,7 +60,7 @@ public class ObjectCBehaviour : MonoBehaviour {
 
         Debug.Log("Drawing a line from " + objectPosition + " to " + targetPosition);*/
         // *******************************         *******************************
-        
+  /*   
         objectTransform.localRotation = Quaternion.LookRotation(newDirection);        
       }
     }
@@ -61,5 +73,5 @@ public class ObjectCBehaviour : MonoBehaviour {
       }
     }
     return(false);
-  }
+  }*/
 }

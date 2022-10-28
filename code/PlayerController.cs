@@ -9,6 +9,16 @@ public class PlayerController : MonoBehaviour {
   private new Transform transform;
   private new Rigidbody rigidbody;
 
+  // Campos para Eventos
+  public delegate void mensajeA();
+  public event mensajeA changeObjectA;
+
+  public delegate void mensajeB();
+  public event mensajeB changeObjectB;
+
+  public delegate void mensajeC();
+  public event mensajeC changeObjectAB;
+
   void Start(){
     this.transform = GetComponent<Transform>();
     this.rigidbody = GetComponent<Rigidbody>();
@@ -19,13 +29,28 @@ public class PlayerController : MonoBehaviour {
   void Update(){
     this.move();
     this.rotate();
+
+    // Envío de mensajes
+
+  }
+
+  void OnCollisionEnter(Collision collision) {
+    if (collision.gameObject.tag == "TypeA") {
+      changeObjectB();
+    }
+    if (collision.gameObject.tag == "TypeB") {
+      changeObjectA();
+    }
+    if (collision.gameObject.tag == "TypeC") {
+      changeObjectAB();
+    }
   }
 
   private void move() {
     if (Input.GetKey(KeyCode.W)) this.transform.position += (Vector3.forward * Time.deltaTime) * this.movement_speed;
     if (Input.GetKey(KeyCode.A)) this.transform.position += (Vector3.left * Time.deltaTime) * this.movement_speed;
     if (Input.GetKey(KeyCode.S)) this.transform.position += (Vector3.back * Time.deltaTime) * this.movement_speed;
-    if (Input.GetKey(KeyCode.D)) this.transform.position += (Vector3.right * Time.deltaTime) * this.movement_speed;
+    if (Input.GetKey(KeyCode.D)) this.transform.position += (Vector3.right * Time.deltaTime) * this.movement_speed;  
   }
 
   private void rotate() {
