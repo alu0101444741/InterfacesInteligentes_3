@@ -6,9 +6,11 @@ Se ha añadido un objeto de tipo texto para mostrar como el color del suscriptor
 
 ![](https://github.com/alu0101444741/InterfacesInteligentes_3/blob/main/ScriptsGIFs/SuscriptorNotificador.gif)
 
+## PlayerController
+Controlador de personaje y notificador de eventos.
+
 ## ObjectABehaviour
-Una colisión del jugador con un objeto de tipo A, provocará que un objeto tipo B (cubos) elegido al azar incremente su tamaño ligeramente.
-Además, añade un campo de tipo booleano para detectar si el objeto actual se encuentra en el suelo. 
+Una colisión del jugador con un objeto de tipo A, provocará que todos los objetos de tipo B (cubos) incrementen su tamaño ligeramente. 
 ![](https://github.com/alu0101444741/InterfacesInteligentes_3/blob/main/ScriptsGIFs/ObjectABehaviour.gif)
 
 ## ObjectBBehaviour
@@ -17,7 +19,8 @@ Esto se logra mediante la función 'LookAt' y finalmente 'transform.forward'.
 ![](https://github.com/alu0101444741/InterfacesInteligentes_3/blob/main/ScriptsGIFs/ObjectBBehaviour.gif)
 
 ## ObjectCBehaviour
-La aproximación del jugador a un objeto de tipo C, provocará dos reacciones:
+La colisión del jugador con un objeto de tipo C, provocará dos reacciones:
+
 1- Todos los objetos de tipo A salten y cambien su color por otro aleatorio.
 El salto se logra mediante el método 'AddForce', aplicando una fuerza de tipo impulso (ForceMode.Impulse) sobre el eje Y.
 

@@ -12,12 +12,12 @@ public class PlayerController : MonoBehaviour {
   // Campos para Eventos
   public delegate void mensajeA();
   public event mensajeA changeObjectA;
-
   public delegate void mensajeB();
   public event mensajeB changeObjectB;
-
   public delegate void mensajeC();
   public event mensajeC changeObjectAB;
+  public delegate void mensajeD();
+  public event mensajeD changeObjectBRotate;
 
   void Start(){
     this.transform = GetComponent<Transform>();
@@ -29,9 +29,6 @@ public class PlayerController : MonoBehaviour {
   void Update(){
     this.move();
     this.rotate();
-
-    // Envío de mensajes
-
   }
 
   void OnCollisionEnter(Collision collision) {
@@ -43,6 +40,12 @@ public class PlayerController : MonoBehaviour {
     }
     if (collision.gameObject.tag == "TypeC") {
       changeObjectAB();
+    }
+  }
+
+  void OnCollisionStay(Collision collision) {
+    if (collision.gameObject.tag == "TypeC") {
+      changeObjectBRotate();
     }
   }
 
